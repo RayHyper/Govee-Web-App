@@ -67,7 +67,7 @@ Govee-API-Key: xxxx
 
 ## Authentication
 Include your API key in all requests:
-```
+```http
 Govee-API-Key: xxxx
 ```
 
