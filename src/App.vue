@@ -38,12 +38,15 @@ export default {
 
       try {
         //make post request
-        const response = await axios.post("/api1", data, {
-          headers: {
-            "Content-Type": "application/json",
-            "Govee-API-Key": import.meta.env.VITE_KEY,
-          },
-        });
+        const response = await axios.post(
+          "http://localhost:5000/device/onoff",
+          data,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         console.log(response.data);
 
@@ -69,12 +72,16 @@ export default {
 
       try {
         //make post request
-        const response = await axios.post("/api1", data, {
-          headers: {
-            "Content-Type": "application/json",
-            "Govee-API-Key": import.meta.env.VITE_KEY,
-          },
-        });
+        const response = await axios.post(
+          "http://localhost:5000/device/onoff",
+          data,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "Govee-API-Key": import.meta.env.VITE_KEY,
+            },
+          }
+        );
 
         console.log(response.data);
 
