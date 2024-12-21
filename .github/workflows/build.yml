@@ -16,6 +16,6 @@ jobs:
         run: npm run build
 
       - name: Run Backend
-        run:
+        run: |
           cd api
           nodemon server.js
