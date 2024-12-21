@@ -102,7 +102,7 @@ async postOff(){
 
         const json = await response.json();
 
-        console.log(json);
+        console.log(json;
         this.status = false;
     }
     catch(error){
