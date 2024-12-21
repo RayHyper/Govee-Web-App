@@ -54,12 +54,12 @@ Govee-API-Key: xxxx
 {
   "requestId": "uuid",
   "payload": {
-    "sku": "H605C",                    // Device model
-    "device": "64:09:C5:32:37:36:2D:13", // Device MAC
+    "sku": "H605C",                  
+    "device": "64:09:C5:32:37:36:2D:13",
     "capability": {
       "type": "devices.capabilities.on_off",
       "instance": "powerSwitch",
-      "value": 0                       // 0 = off, 1 = on
+      "value": 0                      
     }
   }
 }
@@ -98,6 +98,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Tech Stack
+Vue with Vercel
 
 ## Other
 Not affiliated with Govee or other products made for educational purposes only 😊.
