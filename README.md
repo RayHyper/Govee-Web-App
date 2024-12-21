@@ -1,6 +1,34 @@
-# Govee RayRemote
+# Govee Lamp Web App
 
-This template should help get you started developing with Vue 3 in Vite.
+Web app to control the Govee Lamp H6052
+
+![alt text](https://cdn11.bigcommerce.com/s-sp9oc95xrw/products/24699/images/81053/g3__63668.1717425731.386.513.png?c=2)
+    
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/RayHyper/Govee-Web-App.git
+```
+
+Go to the project directory
+
+```bash
+  cd Govee-Web-App
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the local server
+
+```bash
+  npm run dev
+```
 
 ## Recommended IDE Setup
 
