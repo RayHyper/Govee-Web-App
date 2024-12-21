@@ -55,3 +55,6 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Other
+Not affiliated with Govee or other products made for educational purposes only 😊.
