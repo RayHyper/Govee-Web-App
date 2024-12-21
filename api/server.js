@@ -10,13 +10,13 @@ const port = 5000
 app.use(cors())
 app.use(express.json())
 
-const base_url = 'https://openapi.api.govee.com'
+const baseUrl = 'https://openapi.api.govee.com'
 
 app.post('/device/onoff', (req, res) => {
   const data = req.body
 
   axios
-    .post(base_url + '/router/api/v1/device/control', data, {
+    .post(baseUrl + '/router/api/v1/device/control', data, {
       headers: {
         'Content-Type': 'application/json',
         'Govee-API-Key': process.env.VITE_KEY
@@ -33,7 +33,7 @@ app.post('/device/onoff', (req, res) => {
 
 app.get('/device/info', (req, res) => {
   axios
-    .get(base_url + '/router/api/v1/user/devices', {
+    .get(baseUrl + '/router/api/v1/user/devices', {
       headers: {
         'Content-Type': 'application/json',
         'Govee-API-Key': process.env.VITE_KEY
