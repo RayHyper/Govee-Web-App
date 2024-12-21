@@ -30,6 +30,49 @@ Start the local server
   npm run dev
 ```
 
+## API Reference
+
+### Get Devices
+
+Get devices from Govee
+
+```http
+GET /router/api/v1/user/devices
+Host: https://openapi.api.govee.com
+Govee-API-Key: xxxx
+```
+
+### Control Device
+
+Turn devices on/off and control other settings.
+
+```http
+POST /router/api/v1/device/control
+Host: https://openapi.api.govee.com
+Govee-API-Key: xxxx
+
+{
+  "requestId": "uuid",
+  "payload": {
+    "sku": "H605C",                    // Device model
+    "device": "64:09:C5:32:37:36:2D:13", // Device MAC
+    "capability": {
+      "type": "devices.capabilities.on_off",
+      "instance": "powerSwitch",
+      "value": 0                       // 0 = off, 1 = on
+    }
+  }
+}
+```
+
+## Authentication
+Include your API key in all requests:
+```
+Govee-API-Key: xxxx
+```
+
+
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
