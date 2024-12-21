@@ -1,6 +1,6 @@
 # Govee Lamp Web App
 
-Web app to control the Govee Lamp H6052
+This project is a web application designed to control the Govee Lamp H6052. Users can turn the lamp on and off and control other settings through a simple web interface.
 
 ![alt text](https://cdn11.bigcommerce.com/s-sp9oc95xrw/products/24699/images/81053/g3__63668.1717425731.386.513.png?c=2)
 
@@ -100,7 +100,11 @@ npm run build
 ```
 
 ## Tech Stack
-Vue with Vercel
+
+**Client:** Vue.js, Vite
+
+**Server:** Node.js, Express, Axios
+
 
 ## Other
 Not affiliated with Govee or other products made for educational purposes only 😊.
