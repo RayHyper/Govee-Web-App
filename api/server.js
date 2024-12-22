@@ -1,53 +1,75 @@
-import express from 'express'
-import axios from 'axios'
-import dotenv from 'dotenv'
-import cors from 'cors'
+import express from "express";
+import axios from "axios";
+import dotenv from "dotenv";
+import cors from "cors";
 
-dotenv.config()
+dotenv.config();
 
-const app = express()
-const port = 5000
-app.use(cors())
-app.use(express.json())
+const app = express();
+const port = 5000;
+app.use(cors());
+app.use(express.json());
 
-const baseUrl = 'https://openapi.api.govee.com'
+const baseUrl = "https://openapi.api.govee.com";
 
-app.post('/device/onoff', (req, res) => {
-  const data = req.body
+//turn device on or off
+app.post("/device/onoff", (req, res) => {
+  const data = req.body;
 
   axios
-    .post(baseUrl + '/router/api/v1/device/control', data, {
+    .post(baseUrl + "/router/api/v1/device/control", data, {
       headers: {
-        'Content-Type': 'application/json',
-        'Govee-API-Key': process.env.VITE_KEY
-      }
+        "Content-Type": "application/json",
+        "Govee-API-Key": process.env.VITE_KEY,
+      },
     })
     .then((response) => {
-      res.json(response.data)
+      res.json(response.data);
     })
     .catch((error) => {
-      console.log(error)
-      res.status(500).send('Internal Server Error')
-    })
-})
+      console.log(error);
+      res.status(500).send("Internal Server Error");
+    });
+});
 
-app.get('/device/info', (req, res) => {
+//get devices information
+app.get("/device/info", (req, res) => {
   axios
-    .get(baseUrl + '/router/api/v1/user/devices', {
+    .get(baseUrl + "/router/api/v1/user/devices", {
       headers: {
-        'Content-Type': 'application/json',
-        'Govee-API-Key': process.env.VITE_KEY
-      }
+        "Content-Type": "application/json",
+        "Govee-API-Key": process.env.VITE_KEY,
+      },
     })
     .then((response) => {
-      res.json(response.data)
+      res.json(response.data);
     })
     .catch((error) => {
-      console.log(error)
-      res.status(500).send('Internal Server Error')
+      console.log(error);
+      res.status(500).send("Internal Server Error");
+    });
+});
+
+//test feature
+app.post("/device/changeColour", (req, res) => {
+  const data = req.body;
+
+  axios
+    .post(baseUrl + "/router/api/v1/device/control", data, {
+      headers: {
+        "Content-Type": "application/json",
+        "Govee-API-Key": process.env.VITE_KEY,
+      },
     })
-})
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send("Internal Server Error");
+    });
+});
 
 app.listen(port, () => {
-  console.log(`Backend is running on port ${port}`)
-})
+  console.log(`Backend is running on port ${port}`);
+});
