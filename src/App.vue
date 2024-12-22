@@ -55,8 +55,13 @@ export default {
         );
 
         console.log(response.data);
-
-        this.status = true;
+        if(this.status == true){
+          this.status = false
+        }
+        else{
+          this.status = true
+        }
+  
       } catch (error) {
         console.log(error);
       }
