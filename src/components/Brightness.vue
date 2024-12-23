@@ -1,11 +1,12 @@
 <template>
-  <div class="colour-pick">
-    <h3>Colour</h3>
-    <button @click="changeColour(16711680), noti()">Red</button>
-    <button @click="changeColour(255), noti()">Blue</button>
-    <button @click="changeColour(65280), noti()">Green</button>
-    <button @click="changeColour(16777215), noti()">White</button>
-    <button @click="changeColour(16776960), noti()">Yellow</button>
+  <div>
+    <h3>Brightness</h3>
+    <button @click="changeBright(1), noti()">1</button>
+    <button @click="changeBright(10), noti()">10</button>
+    <button @click="changeBright(15), noti()">15</button>
+    <button @click="changeBright(30), noti()">30</button>
+    <button @click="changeBright(50), noti()">50</button>
+    <button @click="changeBright(100), noti()">100</button>
   </div>
 </template>
 
@@ -13,15 +14,7 @@
 import axios from "axios";
 import { useToast } from "vue-toast-notification";
 import "vue-toast-notification/dist/theme-sugar.css";
-
 export default {
-  data() {
-    return {
-      name: "Raymond Lam",
-      status: false,
-    };
-  },
-
   methods: {
     noti() {
       const $toast = useToast();
@@ -32,16 +25,16 @@ export default {
         duration: 3000,
       });
     },
-    async changeColour(rgbCode) {
+    async changeBright(bright) {
       const data = {
         requestId: "uuid",
         payload: {
           sku: "H6052",
           device: "2D:19:CA:37:31:31:16:56",
           capability: {
-            type: "devices.capabilities.color_setting",
-            instance: "colorRgb",
-            value: rgbCode,
+            type: "devices.capabilities.range",
+            instance: "brightness",
+            value: bright,
           },
         },
       };
@@ -49,7 +42,7 @@ export default {
       try {
         //make post request
         const response = await axios.post(
-          "http://localhost:5000/device/changeColour",
+          "http://localhost:5000/device/changeBright",
           data,
           {
             headers: {

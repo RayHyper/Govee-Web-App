@@ -50,7 +50,7 @@ app.get("/device/info", (req, res) => {
     });
 });
 
-//test feature
+//change colour feature
 app.post("/device/changeColour", (req, res) => {
   const data = req.body;
 
@@ -69,6 +69,28 @@ app.post("/device/changeColour", (req, res) => {
       res.status(500).send("Internal Server Error");
     });
 });
+
+//change brightness
+app.post("/device/changeBright", (req, res) => {
+  const data = req.body;
+
+  axios
+    .post(baseUrl + "/router/api/v1/device/control", data, {
+      headers: {
+        "Content-Type": "application/json",
+        "Govee-API-Key": process.env.VITE_KEY,
+      },
+    })
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send("Internal Server Error");
+    });
+});
+
+
 
 app.listen(port, () => {
   console.log(`Backend is running on port ${port}`);
