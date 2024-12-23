@@ -17,6 +17,12 @@
 
     <ColourPick />
     <Brightness />
+     
+    <button>
+      <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/>
+    </button>
+   
+ 
   </div>
 </template>
 
