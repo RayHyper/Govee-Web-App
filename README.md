@@ -4,6 +4,8 @@ This project is a web application designed to control the Govee Lamp H6052. User
 
 ![alt text](https://cdn11.bigcommerce.com/s-sp9oc95xrw/products/24699/images/81053/g3__63668.1717425731.386.513.png?c=2)
 
+![alt text](src/assets/goveeapp.png)
+
 ## Run Locally
 
 Clone the project
