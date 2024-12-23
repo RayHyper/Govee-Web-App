@@ -130,6 +130,7 @@ body {
 }
 
 button {
+  font-size: 15px;
   padding: 20px;
   border-radius: 20px;
   border: 0px black solid;
