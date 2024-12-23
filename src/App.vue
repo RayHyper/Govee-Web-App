@@ -1,28 +1,39 @@
 <template>
   <div class="container" id="card">
-   <h2>{{ name }}</h2>
+    <h2>{{ name }}</h2>
     <p v-if="status">Light is on</p>
     <p v-else>Light is off</p>
 
     <div>
       <button class="on" @click="power(1), noti('On')">
-
-        <img width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/shutdown--v1.png" alt="shutdown--v1"/>
-
+        <img
+          width="30"
+          height="30"
+          src="https://img.icons8.com/ios/50/FFFFFF/shutdown--v1.png"
+          alt="shutdown--v1"
+        />
       </button>
       <button class="off" @click="power(0), noti('Off')">
-        <img width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/shutdown--v1.png" alt="shutdown--v1"/>
+        <img
+          width="30"
+          height="30"
+          src="https://img.icons8.com/ios/50/FFFFFF/shutdown--v1.png"
+          alt="shutdown--v1"
+        />
       </button>
     </div>
 
     <ColourPick />
     <Brightness />
-     
+
     <button>
-      <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/>
+      <img
+        width="20"
+        height="20"
+        src="https://img.icons8.com/ios-filled/50/home.png"
+        alt="home"
+      />
     </button>
-   
- 
   </div>
 </template>
 
@@ -98,18 +109,18 @@ export default {
 <style>
 * {
   font-family: "Funnel Sans", serif;
-  font-weight:400;
+  font-weight: 400;
   margin: 0px;
   padding: 0px;
 }
 body {
-  background-color: rgba(104, 172, 189, 0.233);
+  background-color: rgba(5, 5, 5, 0.849);
 }
 .container {
   background-color: white;
   text-align: center;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   margin: auto;
   width: 450px;
   height: 700px;
@@ -138,16 +149,19 @@ button:active {
 
 .on {
   background-color: rgb(109, 218, 109);
-  width:40%;
+  width: 40%;
   color: white;
 }
 .off {
   background-color: rgb(228, 70, 70);
-  width:40%;
+  width: 40%;
   color: white;
 }
 
-.colour-pick{
+.colour-pick {
   margin-top: 50px;
+}
+h2{
+  color:rgb(52, 189, 231);
 }
 </style>
