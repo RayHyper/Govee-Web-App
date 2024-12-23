@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h3>Brightness</h3>
+    <div>
+        <img width="20" height="20" src="https://img.icons8.com/ios/50/1A1A1A/flash-light.png" alt="flash-light"/>
+    </div>
+    
     <button @click="changeBright(1), noti()">1</button>
     <button @click="changeBright(10), noti()">10</button>
     <button @click="changeBright(15), noti()">15</button>

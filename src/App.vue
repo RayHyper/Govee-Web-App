@@ -1,12 +1,18 @@
 <template>
   <div class="container" id="card">
-    <h2>Govee Light Web App</h2>
+   <h2>{{ name }}</h2>
     <p v-if="status">Light is on</p>
     <p v-else>Light is off</p>
 
     <div>
-      <button class="on" @click="power(1), noti()">Turn On</button>
-      <button class="off" @click="power(0), noti()">Turn Off</button>
+      <button class="on" @click="power(1), noti('On')">
+
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/shutdown--v1.png" alt="shutdown--v1"/>
+
+      </button>
+      <button class="off" @click="power(0), noti('Off')">
+        <img width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/shutdown--v1.png" alt="shutdown--v1"/>
+      </button>
     </div>
 
     <ColourPick />
@@ -28,16 +34,16 @@ export default {
   },
   data() {
     return {
-      name: "Raymond Lam",
+      name: "Govee Light",
       status: false,
     };
   },
 
   methods: {
-    noti() {
+    noti(power) {
       const $toast = useToast();
       $toast.open({
-        message: "Power",
+        message: "Turning " + power,
         type: "info",
         position: "top-right",
         duration: 3000,
@@ -85,7 +91,8 @@ export default {
 
 <style>
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Funnel Sans", serif;
+  font-weight:400;
   margin: 0px;
   padding: 0px;
 }
@@ -102,7 +109,7 @@ body {
   height: 700px;
   margin-top: 100px;
   padding: 15px;
-  line-height: 60px;
+  line-height: 50px;
 }
 
 button {
@@ -125,10 +132,16 @@ button:active {
 
 .on {
   background-color: rgb(109, 218, 109);
+  width:40%;
   color: white;
 }
 .off {
   background-color: rgb(228, 70, 70);
+  width:40%;
   color: white;
+}
+
+.colour-pick{
+  margin-top: 50px;
 }
 </style>

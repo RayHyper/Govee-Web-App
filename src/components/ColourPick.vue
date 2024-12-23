@@ -1,6 +1,8 @@
 <template>
   <div class="colour-pick">
-    <h3>Colour</h3>
+    <div>
+      <img width="30" height="30" src="https://img.icons8.com/external-smashingstocks-hand-drawn-black-smashing-stocks/99/1A1A1A/external-colour-education-smashingstocks-hand-drawn-black-smashing-stocks.png" alt="external-colour-education-smashingstocks-hand-drawn-black-smashing-stocks"/>
+    </div>
     <button @click="changeColour(16711680), noti()">Red</button>
     <button @click="changeColour(255), noti()">Blue</button>
     <button @click="changeColour(65280), noti()">Green</button>
