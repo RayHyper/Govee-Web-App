@@ -8,17 +8,15 @@
     "server": "nodemon api/server.js",
     "build": "vite build",
     "preview": "vite preview",
-      "both": "concurrently \"npm run server\" \"npm run dev\""
+    "both": "concurrently \"npm run server\" \"npm run dev\""
   },
   "dependencies": {
-    "@primevue/themes": "^4.2.5",
     "axios": "^1.7.9",
     "concurrently": "^9.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "lint": "^0.8.19",
-    "primevue": "^4.2.5",
     "vue": "^3.5.13",
     "vue-router": "^4.4.5",
     "vue-toast-notification": "^3.1.3"
