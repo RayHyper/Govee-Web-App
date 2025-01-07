@@ -49,6 +49,7 @@ export default {
   },
 
   methods: {
+    //Notification 
     noti(power) {
       const $toast = useToast();
       $toast.open({
@@ -58,6 +59,7 @@ export default {
         duration: 3000,
       });
     },
+    //Power state
     async power(state) {
       const data = {
         requestId: "uuid",
@@ -73,7 +75,7 @@ export default {
       };
 
       try {
-        //make post request
+        //make post request to endpoint
         const response = await axios.post(
           "http://localhost:5000/device/onoff",
           data,
@@ -142,7 +144,6 @@ button:active {
   cursor: pointer;
   box-shadow: none;
   transform: translateY(4px);
-  /* Scaling button to 0.98 to its original size */
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

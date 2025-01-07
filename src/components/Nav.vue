@@ -1,3 +1,4 @@
+<!--Navbar component-->
 <template>
   <RouterLink to="/">
     <button class="home">

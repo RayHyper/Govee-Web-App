@@ -20,13 +20,11 @@ export default {
 <style scoped>
 .container {
   position: relative;
-  /* Other styles for the container */
 }
 
 .mynav {
   position: absolute;
-  top: 600px; /* Position 100px below the container */
-  width: 100%; /* Ensure it takes the full width of the container */
-  /* Other styles for the mynav */
+  top: 600px;
+  width: 100%; 
 }
 </style>

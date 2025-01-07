@@ -24,7 +24,6 @@ import "vue-toast-notification/dist/theme-sugar.css";
 export default {
   data() {
     return {
-      name: "Raymond Lam",
       status: false,
     };
   },
